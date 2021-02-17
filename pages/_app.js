@@ -107,6 +107,9 @@ function MyApp({ Component, pageProps }) {
         role="banner"
         css={css`
           padding: ${tokens.space['2xl']};
+          ${tokens.mediaQueries.md} {
+            margin-bottom: ${tokens.space['2xl']};
+          }
         `}
       >
         <div
@@ -179,8 +182,7 @@ function MyApp({ Component, pageProps }) {
                           }
                           :hover {
                             cursor: pointer;
-                            text-decoration: underline;
-                            text-underline-offset: 4px;
+                            border-bottom: 3px solid;
                           }
                         `}
                       >
@@ -195,27 +197,24 @@ function MyApp({ Component, pageProps }) {
         </div>
       </header>
       <main>
-        <Wrapper>
+        <div
+          css={css`
+            width: 90vw;
+            width: clamp(16rem, 90vw, 70rem);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: ${tokens.space['2xl']};
+            padding-bottom: ${tokens.space['2xl']};
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            position: relative;
+          `}
+        >
           <Component {...pageProps} />
-        </Wrapper>
+        </div>
       </main>
     </div>
   )
 }
-
-const Wrapper = (props) => (
-  <div
-    css={css`
-      width: 90vw;
-      width: clamp(16rem, 90vw, 70rem);
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      position: relative;
-    `}
-    {...props}
-  />
-)
 
 export default MyApp
