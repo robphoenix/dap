@@ -1,14 +1,13 @@
 import { css } from '@emotion/react'
-import Link from 'next/link'
 
 import tokens from '../tokens'
-import { PageSection, PageTitle, StyledLink } from '../components'
+import { PageSection, Title, StyledLink } from '../components'
 
 function About() {
   const styles = {
     h3: css`
       text-transform: capitalize;
-      margin-bottom: ${tokens.space.xl};
+      margin-bottom: ${tokens.space.lg};
     `,
     italic: css`
       font-style: normal;
@@ -17,8 +16,7 @@ function About() {
 
   return (
     <>
-      <PageTitle>about</PageTitle>
-
+      <Title id="about">about</Title>
       <PageSection>
         <div
           css={css`
@@ -63,24 +61,120 @@ function About() {
             </p>
           </div>
 
+          <div>
+            <p
+              css={css`
+                margin-bottom: ${tokens.space.md};
+              `}
+            >
+              This is the second version of the manifesto, it uses the words{' '}
+              <span css={styles.italic}>‘Disabled people’</span> rather than{' '}
+              <span css={styles.italic}>‘People with Disabilities’</span>. This
+              is so the language in the text better reflects the social model of
+              disability.
+            </p>
+            <p>
+              The Manifesto is available to{' '}
+              <StyledLink href="/files/2019-DIY-as-Privilege.pdf">
+                download as a PDF
+              </StyledLink>{' '}
+              and{' '}
+              <StyledLink href="https://richardjphoenix.bigcartel.com/product/diy-as-privilege">
+                buy as a risograph print
+              </StyledLink>
+              .
+            </p>
+          </div>
+        </div>
+      </PageSection>
+      <Title id="why">why I wrote the manifesto</Title>
+
+      <PageSection>
+        <div
+          css={css`
+            display: grid;
+            grid-gap: ${tokens.space.xl};
+            gap: ${tokens.space.xl};
+          `}
+        >
           <p>
-            This is the second version of the manifesto, it uses the words{' '}
-            <span css={styles.italic}>‘Disabled people’</span> rather than{' '}
-            <span css={styles.italic}>‘People with Disabilities’</span>. This is
-            so the language in the text better reflects the social model of
-            disability.
+            “On the 4th December 2006 I saw the bands{' '}
+            <span css={styles.italic}>Beat Express</span> and{' '}
+            <span css={styles.italic}>Heavy Load</span> play in Brighton. It was
+            the first time I had seen musicians with learning disabilities on
+            stage performing and it was one of the best gigs I’ve ever been to.
+            I wondered why I hadn’t heard of or seen these musicians play
+            before. I thought that if I had enjoyed it so much, then other
+            people would too. It also made me realise the opportunities I had as
+            a musician weren’t available to everyone. So, since then I’ve done
+            all I can to support all kinds of people to make all kinds of music,
+            share this music and get others to watch and listen.
           </p>
           <p>
-            The Manifesto is available to{' '}
-            <StyledLink href="/files/2019-DIY-as-Privilege.pdf">
-              download as a PDF
+            This includes supporting the creation of a music scene in Brighton
+            around the long running{' '}
+            <StyledLink href="https://therockhousebrighton.blogspot.com/">
+              Rock House
+            </StyledLink>{' '}
+            night; organising three UK tours for bands with members with
+            learning disabilities through{' '}
+            <StyledLink href="https://www.constantflux.co.uk">
+              Constant Flux
+            </StyledLink>
+            ; supporting{' '}
+            <StyledLink href="https://diyspaceforlondon.org/">
+              DIY Space For London
+            </StyledLink>{' '}
+            to be the first volunteer run venue in the UK to achieve Bronze
+            accreditation for access from{' '}
+            <StyledLink href="http://www.attitudeiseverything.org.uk/">
+              Attitude Is Everything
+            </StyledLink>
+            ; and working for organisations such as{' '}
+            <StyledLink href="https://www.heartnsoul.co.uk/">
+              Heart n Soul
+            </StyledLink>
+            ,{' '}
+            <StyledLink href="http://www.carousel.org.uk/">Carousel</StyledLink>
+            ,{' '}
+            <StyledLink href="http://www.clubsoda.org.uk/">
+              Club Soda
+            </StyledLink>
+            ,{' '}
+            <StyledLink href="https://www.cultureshift.org.uk/">
+              Culture Shift
             </StyledLink>{' '}
             and{' '}
-            <StyledLink href="https://richardjphoenix.bigcartel.com/product/diy-as-privilege">
-              buy as a risograph print
-            </StyledLink>
-            .
+            <StyledLink href="https://stayuplate.org/">Stay Up Late</StyledLink>{' '}
+            as a music facilitator supporting people with learning disabilities
+            to form bands, create music, record and perform; as well as
+            organising countless other gigs, releases, events and projects.
           </p>
+          <p>
+            I think everyone should have the chance to experience a little of
+            what I’ve been lucky enough to experience since 2006. I will forever
+            be grateful for everything I have learnt from being involved with
+            all of this. I wrote the manifesto to try and encourage others to
+            get involved and help make more and more things happen.
+          </p>
+          <p>
+            In 2006 I only knew two bands existed, now I can write the list
+            below of bands and musicians. Some existed for just one night and
+            some have been playing for years, all of them helped change mine and
+            other people’s worlds, even in some small way. I hope this list will
+            only get longer and longer!”
+          </p>
+          <div
+            css={css`
+              text-align: right;
+              font-size: ${tokens.fontSizes.md};
+            `}
+          >
+            &mdash;{' '}
+            <StyledLink href="https://www.richardphoenix.com">
+              Richard Phoenix
+            </StyledLink>
+          </div>
         </div>
       </PageSection>
     </>

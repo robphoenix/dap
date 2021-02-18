@@ -7,7 +7,9 @@ function StyledLink(props) {
   return (
     <a
       css={css`
-        text-decoration: none;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
         cursor: pointer;
         color: ${tokens.colors.text};
         background-image: linear-gradient(
@@ -16,13 +18,14 @@ function StyledLink(props) {
         );
         background-repeat: no-repeat;
         background-position: center bottom;
-        background-size: 100% 10%;
-        transition: all 0.2s ease-in-out;
-        padding-bottom: ${tokens.space.xxs};
+        background-size: 100% 0;
+        transition: all 0.05s ease-in-out;
         :hover,
         :focus {
+          text-decoration: none;
           color: ${tokens.colors.background};
           background-size: 100% 100%;
+          transition: all 0.2s ease-in-out;
         }
         :visited {
           color: ${showVisited && tokens.colors.background};
@@ -45,13 +48,13 @@ const Quote = (props) => (
   />
 )
 
-const PageTitle = (props) => (
+const Title = (props) => (
   <h2
     css={css`
       text-transform: capitalize;
       margin-bottom: ${tokens.space.xl};
       ${tokens.mediaQueries.md} {
-        margin-bottom: ${tokens.space.xxxl};
+        margin-bottom: ${tokens.space.xxl};
         text-align: center;
       }
     `}
@@ -62,7 +65,9 @@ const PageTitle = (props) => (
 const PageSection = (props) => (
   <section
     css={css`
+      margin-bottom: ${tokens.space.xxl};
       ${tokens.mediaQueries.lg} {
+        margin-bottom: ${tokens.space.xxxxl};
         width: 65ch;
         width: clamp(8rem, 40vw, 65ch);
         margin-left: auto;
@@ -73,4 +78,4 @@ const PageSection = (props) => (
   />
 )
 
-export { StyledLink, Quote, PageTitle, PageSection }
+export { StyledLink, Quote, Title, PageSection }
