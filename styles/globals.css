@@ -117,8 +117,8 @@ h3 {
   src: url('/fonts/cocogothic/cocogothic-bolditalic.woff2') format('woff2'),
     url('/fonts/cocogothic/cocogothic-bolditalic.woff') format('woff'),
     url('/fonts/cocogothic/cocogothic-bolditalic.ttf') format('ttf');
-  font-style: italic;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: normal;
   font-display: swap;
   text-rendering: optimizeLegibility;
 }
