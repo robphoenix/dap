@@ -7,8 +7,9 @@ import tokens from '../tokens'
 import '../styles/globals.css'
 
 function App({ Component, pageProps }) {
+  const navigation = ['manifesto', 'about', 'publications']
   return (
-    <div>
+    <>
       <Head>
         <title>D.I.Y. as Privilege</title>
         <link rel="icon" href="/favicon.ico" />
@@ -106,114 +107,103 @@ function App({ Component, pageProps }) {
       <header
         role="banner"
         css={css`
-          padding: ${tokens.space['2xl']};
+          padding: ${tokens.space.md};
+          display: grid;
+          justify-content: center;
+          margin-bottom: ${tokens.space.xxl};
           ${tokens.mediaQueries.md} {
-            margin-bottom: ${tokens.space['2xl']};
+            padding: ${tokens.space.xl};
+            margin-bottom: ${tokens.space.xxl};
           }
         `}
       >
         <div
           css={css`
-            width: 80vw;
-            width: clamp(8rem, 80vw, 80rem);
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            position: relative;
+            width: 90vw;
+            width: clamp(8rem, 90vw, 70rem);
+            display: grid;
+            grid-gap: ${tokens.space.md};
+            gap: ${tokens.space.md};
+            align-items: baseline;
+            grid-template-columns: repeat(1, 1fr);
+            ${tokens.mediaQueries.sm} {
+              grid-template-columns: repeat(2, 1fr);
+            }
           `}
         >
-          <div
-            css={css`
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              justify-content: center;
-              ${tokens.mediaQueries.md} {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: ${tokens.space.lg};
-                gap: ${tokens.space.lg};
-                align-items: baseline;
-              }
-            `}
-          >
-            <Link href="/">
-              <a>
-                <h1
+          <Link href="/">
+            <a>
+              <h1>D.I.Y. as Privilege</h1>
+            </a>
+          </Link>
+
+          <nav>
+            <ul
+              role="list"
+              css={css`
+                display: flex;
+                ${tokens.mediaQueries.md} {
+                  justify-content: flex-end;
+                }
+              `}
+            >
+              {navigation.map((item) => (
+                <li
+                  key={item}
                   css={css`
-                    margin-bottom: ${tokens.space.xl};
+                    text-transform: capitalize;
+                    margin-right: ${tokens.space.md};
+                    ${tokens.mediaQueries.md} {
+                      margin-right: 0;
+                      margin-left: ${tokens.space.xl};
+                    }
                   `}
                 >
-                  D.I.Y. as Privilege
-                </h1>
-              </a>
-            </Link>
-
-            <nav>
-              <ul
-                role="list"
-                css={css`
-                  display: flex;
-                  flex-wrap: no-wrap;
-                  justify-content: center;
-                  ${tokens.mediaQueries.md} {
-                    justify-content: flex-end;
-                  }
-                `}
-              >
-                {['manifesto', 'about', 'publications'].map((item) => (
-                  <li
-                    key={item}
-                    css={css`
-                      text-transform: capitalize;
-                      margin: ${tokens.space.sm};
-                      ${tokens.mediaQueries.md} {
-                        margin: ${tokens.space.md};
-                      }
-                    `}
-                  >
-                    <Link href={`/${item}`}>
-                      <a
-                        css={css`
-                          font-size: ${tokens.fontSizes.xs};
-                          ${tokens.mediaQueries.md} {
-                            font-size: ${tokens.fontSizes.sm};
-                          }
-                          :hover {
-                            cursor: pointer;
-                            border-bottom: 3px solid;
-                          }
-                        `}
-                      >
-                        {item}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+                  <Link href={`/${item}`}>
+                    <a
+                      css={css`
+                        font-size: ${tokens.fontSizes.sm};
+                        ${tokens.mediaQueries.md} {
+                          font-size: ${tokens.fontSizes.md};
+                        }
+                        :hover {
+                          cursor: pointer;
+                          border-bottom: 3px solid;
+                        }
+                      `}
+                    >
+                      {item}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </header>
       <main>
         <div
           css={css`
-            width: 90vw;
-            width: clamp(16rem, 90vw, 70rem);
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: ${tokens.space['2xl']};
-            padding-bottom: ${tokens.space['2xl']};
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            position: relative;
+            display: grid;
+            justify-content: center;
           `}
         >
-          <Component {...pageProps} />
+          <div
+            css={css`
+              width: 90vw;
+              width: clamp(8rem, 90vw, 70rem);
+              margin-bottom: ${tokens.space.xxxl};
+              ${tokens.mediaQueries.md} {
+                padding: 0 ${tokens.space.md};
+                margin-bottom: ${tokens.space.xxl};
+              }
+            `}
+          >
+            <Component {...pageProps} />
+          </div>
         </div>
       </main>
-    </div>
+    </>
   )
 }
 

@@ -28,15 +28,16 @@ function Error() {
         >
           404
         </h1>
-        <div
+
+        <p
           css={css`
             display: inline-block;
             text-align: left;
             vertical-align: middle;
           `}
         >
-          <p>This page could not be found.</p>
-        </div>
+          This page could not be found.
+        </p>
       </div>
     </div>
   )

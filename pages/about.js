@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import Link from 'next/link'
 
 import tokens from '../tokens'
-import { StyledLink } from '../components'
+import { PageSection, PageTitle, StyledLink } from '../components'
 
 function About() {
   const styles = {
@@ -17,34 +17,14 @@ function About() {
 
   return (
     <>
-      <h2
-        css={css`
-          text-transform: capitalize;
-          text-align: center;
-          margin-bottom: ${tokens.space['2xl']};
-          ${tokens.mediaQueries.md} {
-            margin-bottom: ${tokens.space['4xl']};
-          }
-        `}
-      >
-        about
-      </h2>
+      <PageTitle>about</PageTitle>
 
-      <section
-        css={css`
-          ${tokens.mediaQueries.lg} {
-            width: 40vw;
-            width: clamp(8rem, 40vw, 40rem);
-            margin-left: auto;
-            margin-right: auto;
-          }
-        `}
-      >
+      <PageSection>
         <div
           css={css`
             display: grid;
-            grid-gap: ${tokens.space['3xl']};
-            gap: ${tokens.space['3xl']};
+            grid-gap: ${tokens.space.xxxl};
+            gap: ${tokens.space.xxxl};
           `}
         >
           <div>
@@ -102,7 +82,7 @@ function About() {
             .
           </p>
         </div>
-      </section>
+      </PageSection>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import tokens from '../tokens'
-import { Quote } from '../components'
+import { Quote, PageTitle, PageSection } from '../components'
 
 function Manifesto() {
   const styles = {
@@ -20,6 +20,7 @@ function Manifesto() {
         min-width: 2rem;
       }
       ${tokens.mediaQueries.sm} {
+        font-size: ${tokens.fontSizes.md};
         :before {
           min-width: 4rem;
         }
@@ -29,32 +30,14 @@ function Manifesto() {
 
   return (
     <>
-      <h2
-        css={css`
-          text-transform: capitalize;
-          margin-bottom: ${tokens.space['4xl']};
-          text-align: center;
-        `}
-      >
-        13 point manifesto for musicians
-      </h2>
-
-      <section
-        css={css`
-          ${tokens.mediaQueries.lg} {
-            width: 70ch;
-            width: clamp(8rem, 40vw, 70ch);
-            margin-left: auto;
-            margin-right: auto;
-          }
-        `}
-      >
+      <PageTitle>13 point manifesto for musicians</PageTitle>
+      <PageSection>
         <ol
           css={css`
             counter-reset: point;
             display: grid;
-            grid-gap: ${tokens.space['3xl']};
-            gap: ${tokens.space['3xl']};
+            grid-gap: ${tokens.space.xxl};
+            gap: ${tokens.space.xxl};
           `}
         >
           <li css={styles.point}>
@@ -157,7 +140,7 @@ function Manifesto() {
             </p>
           </li>
         </ol>
-      </section>
+      </PageSection>
     </>
   )
 }
