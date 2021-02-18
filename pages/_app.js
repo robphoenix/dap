@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import tokens from '../tokens'
+import tokens from '../theme/tokens'
 
 import '../styles/globals.css'
 

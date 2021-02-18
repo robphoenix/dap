@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import tokens from '../tokens'
+import tokens from '../theme/tokens'
 
 function StyledLink(props) {
   const { showVisited } = props

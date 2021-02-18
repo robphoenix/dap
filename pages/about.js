@@ -1,7 +1,8 @@
 import { css } from '@emotion/react'
 
-import tokens from '../tokens'
+import tokens from '../theme/tokens'
 import { PageSection, Title, StyledLink } from '../components'
+import artists from '../data/artists'
 
 function About() {
   const styles = {
@@ -177,6 +178,30 @@ function About() {
           </div>
         </div>
       </PageSection>
+      <Title id="artists">bands and musicians</Title>
+
+      <ul
+        css={css`
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+          column-gap: ${tokens.space.xxl};
+          row-gap: ${tokens.space.sm};
+        `}
+      >
+        {artists
+          .sort((a, b) => (a.name > b.name ? 1 : -1))
+          .map((artist) => (
+            <p key={artist.name}>
+              {artist.link ? (
+                <StyledLink href={artist.link} showVisited>
+                  {artist.name}
+                </StyledLink>
+              ) : (
+                <p>{artist.name}</p>
+              )}
+            </p>
+          ))}
+      </ul>
     </>
   )
 }
