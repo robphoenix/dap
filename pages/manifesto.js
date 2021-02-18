@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 import tokens from '../theme/tokens'
-import { Quote, Title, PageSection } from '../components'
+import { Quote, Heading, PageSection } from '../components'
 
 function Manifesto() {
   const styles = {
@@ -30,7 +30,7 @@ function Manifesto() {
 
   return (
     <>
-      <Title>13 point manifesto for musicians</Title>
+      <Heading>13 point manifesto for musicians</Heading>
       <PageSection>
         <ol
           css={css`

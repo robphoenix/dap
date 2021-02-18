@@ -1,23 +1,19 @@
 import { css } from '@emotion/react'
 
 import tokens from '../theme/tokens'
-import { PageSection, Title, StyledLink } from '../components'
+import {
+  PageSection,
+  Heading,
+  StyledLink,
+  PageStack,
+  SubHeading,
+} from '../components'
 import artists from '../data/artists'
 
 function About() {
-  const styles = {
-    h3: css`
-      text-transform: capitalize;
-      margin-bottom: ${tokens.space.lg};
-    `,
-    italic: css`
-      font-style: normal;
-    `,
-  }
-
   return (
     <>
-      <Title id="about">about</Title>
+      <Heading id="about">about</Heading>
       <PageSection>
         <div
           css={css`
@@ -27,41 +23,45 @@ function About() {
           `}
         >
           <div>
-            <h3 css={styles.h3}>D.I.Y.</h3>
+            <SubHeading>D.I.Y.</SubHeading>
             <p>
-              Stands for <span css={styles.italic}>“Do It Yourself”</span>. In
-              music it promotes the idea that anyone is capable of becoming a
-              musician and sharing their music. It empowers individuals and
+              Stands for{' '}
+              <span
+                css={css`
+                  font-style: italic;
+                `}
+              >
+                “Do It Yourself”
+              </span>
+              . In music it promotes the idea that anyone is capable of becoming
+              a musician and sharing their music. It empowers individuals and
               communities, encouraging alternative approaches when faced with
               obstacles to achieving their objectives.
             </p>
           </div>
-
           <div>
-            <h3 css={styles.h3}>disability</h3>
+            <SubHeading>disability</SubHeading>
             <p>
               I use the social model of disability. The idea that it is the
               environment, society and culture that surrounds someone that
               creates barriers and obstacles which disable and exclude them.
             </p>
           </div>
-
           <div>
-            <h3 css={styles.h3}>privilege</h3>
+            <SubHeading>privilege</SubHeading>
             <p>
               The idea that advantages are available only to certain people in
               society.
             </p>
           </div>
-
           <div>
-            <h3 css={styles.h3}>manifesto</h3>
+            <SubHeading>manifesto</SubHeading>
             <p>
               A text that promotes a new idea with ways for carrying out changes
               the author believes should be made.
             </p>
           </div>
-
+          `
           <div>
             <p
               css={css`
@@ -69,14 +69,27 @@ function About() {
               `}
             >
               This is the second version of the manifesto, it uses the words{' '}
-              <span css={styles.italic}>‘Disabled people’</span> rather than{' '}
-              <span css={styles.italic}>‘People with Disabilities’</span>. This
-              is so the language in the text better reflects the social model of
-              disability.
+              <span
+                css={css`
+                  font-style: italic;
+                `}
+              >
+                ‘Disabled people’
+              </span>{' '}
+              rather than{' '}
+              <span
+                css={css`
+                  font-style: italic;
+                `}
+              >
+                ‘People with Disabilities’
+              </span>
+              .` This is so the language in the text better reflects the social
+              model of disability.
             </p>
             <p>
               The Manifesto is available to{' '}
-              <StyledLink href="/files/2019-DIY-as-Privilege.pdf">
+              <StyledLink href="/files/diy-as-privilege.pdf">
                 download as a PDF
               </StyledLink>{' '}
               and{' '}
@@ -88,28 +101,36 @@ function About() {
           </div>
         </div>
       </PageSection>
-      <Title id="why">why I wrote the manifesto</Title>
+      <Heading id="why">why I wrote the manifesto</Heading>
 
       <PageSection>
-        <div
-          css={css`
-            display: grid;
-            grid-gap: ${tokens.space.xl};
-            gap: ${tokens.space.xl};
-          `}
-        >
+        <PageStack>
           <p>
             “On the 4th December 2006 I saw the bands{' '}
-            <span css={styles.italic}>Beat Express</span> and{' '}
-            <span css={styles.italic}>Heavy Load</span> play in Brighton. It was
-            the first time I had seen musicians with learning disabilities on
-            stage performing and it was one of the best gigs I’ve ever been to.
-            I wondered why I hadn’t heard of or seen these musicians play
-            before. I thought that if I had enjoyed it so much, then other
-            people would too. It also made me realise the opportunities I had as
-            a musician weren’t available to everyone. So, since then I’ve done
-            all I can to support all kinds of people to make all kinds of music,
-            share this music and get others to watch and listen.
+            <span
+              css={css`
+                font-style: italic;
+              `}
+            >
+              Beat Express
+            </span>{' '}
+            and{' '}
+            <span
+              css={css`
+                font-style: italic;
+              `}
+            >
+              Heavy Load
+            </span>{' '}
+            play in Brighton. It was the first time I had seen musicians with
+            learning disabilities on stage performing and it was one of the best
+            gigs I’ve ever been to. I wondered why I hadn’t heard of or seen
+            these musicians play before. I thought that if I had enjoyed it so
+            much, then other people would too. It also made me realise the
+            opportunities I had as a musician weren’t available to everyone. So,
+            since then I’ve done all I can to support all kinds of people to
+            make all kinds of music, share this music and get others to watch
+            and listen.
           </p>
           <p>
             This includes supporting the creation of a music scene in Brighton
@@ -176,9 +197,9 @@ function About() {
               Richard Phoenix
             </StyledLink>
           </div>
-        </div>
+        </PageStack>
       </PageSection>
-      <Title id="artists">bands and musicians</Title>
+      <Heading id="artists">bands and musicians</Heading>
 
       <ul
         css={css`

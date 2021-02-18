@@ -2,8 +2,8 @@ import { css } from '@emotion/react'
 
 import tokens from '../theme/tokens'
 
-function StyledLink(props) {
-  const { showVisited } = props
+const StyledLink = (props) => {
+  const { showVisited, ...rest } = props
   return (
     <a
       css={css`
@@ -33,7 +33,7 @@ function StyledLink(props) {
           background-color: ${showVisited && tokens.colors.text};
         }
       `}
-      {...props}
+      {...rest}
     />
   )
 }
@@ -48,7 +48,7 @@ const Quote = (props) => (
   />
 )
 
-const Title = (props) => (
+const Heading = (props) => (
   <h2
     css={css`
       text-transform: capitalize;
@@ -57,6 +57,16 @@ const Title = (props) => (
         margin-bottom: ${tokens.space.xxl};
         text-align: center;
       }
+    `}
+    {...props}
+  />
+)
+
+const SubHeading = (props) => (
+  <h3
+    css={css`
+      text-transform: capitalize;
+      margin-bottom: ${tokens.space.lg};
     `}
     {...props}
   />
@@ -78,4 +88,15 @@ const PageSection = (props) => (
   />
 )
 
-export { StyledLink, Quote, Title, PageSection }
+const PageStack = (props) => (
+  <div
+    css={css`
+      display: grid;
+      grid-gap: ${tokens.space.xl};
+      gap: ${tokens.space.xl};
+    `}
+    {...props}
+  />
+)
+
+export { StyledLink, Quote, Heading, SubHeading, PageSection, PageStack }
