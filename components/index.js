@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import tokens from '../theme/tokens'
+import tokens from '../tokens'
 
 const StyledLink = (props) => {
   const { showVisited, ...rest } = props
@@ -100,3 +100,9 @@ const PageStack = (props) => (
 )
 
 export { StyledLink, Quote, Heading, SubHeading, PageSection, PageStack }
+export {
+  Version2FirstImage as Version2Front,
+  Version2SecondImage as Version2Back,
+  Version1FirstImage as Version1Front,
+  Version1SecondImage as Version1Back,
+} from './images'

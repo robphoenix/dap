@@ -6,7 +6,12 @@ import {
   StyledLink,
   PageStack,
   SubHeading,
+  Version2Front,
+  Version2Back,
+  Version1Front,
+  Version1Back,
 } from '../components'
+import tokens from '../tokens'
 
 function Publications() {
   return (
@@ -65,6 +70,9 @@ function Publications() {
           <div
             css={css`
               text-transform: capitalize;
+              display: grid;
+              grid-gap: ${tokens.space.md};
+              gap: ${tokens.space.md};
             `}
           >
             <StyledLink href="https://richardjphoenix.bigcartel.com/product/diy-as-privilege">
@@ -74,6 +82,10 @@ function Publications() {
               download the pdf
             </StyledLink>
           </div>
+          <Version2Front />
+          <Version2Back />
+          <Version1Front />
+          <Version1Back />
         </PageStack>
       </PageSection>
     </>

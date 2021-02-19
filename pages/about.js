@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import tokens from '../theme/tokens'
+import tokens from '../tokens'
 import {
   PageSection,
   Heading,
@@ -61,7 +61,6 @@ function About() {
               the author believes should be made.
             </p>
           </div>
-          `
           <div>
             <p
               css={css`
@@ -84,7 +83,7 @@ function About() {
               >
                 ‘People with Disabilities’
               </span>
-              .` This is so the language in the text better reflects the social
+              . This is so the language in the text better reflects the social
               model of disability.
             </p>
             <p>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { css } from '@emotion/react'
-import tokens from '../theme/tokens'
+import tokens from '../tokens'
 
 function Error() {
   return (

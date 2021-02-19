@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import tokens from '../theme/tokens'
+import tokens from '../tokens'
 import { Quote, Heading, PageSection } from '../components'
 
 function Manifesto() {
